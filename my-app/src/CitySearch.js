@@ -9,19 +9,19 @@ export default function CitySearch(props) {
     let input_value = input_city.current.value
 
     if(input_value.length > 2){
-      axios.get(`api.openweathermap.org/data/2.5/weather?q=${input_value}&appid=df83d303c678952ca385f7c6b8e68720`)
+      axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${input_value}&appid=df83d303c678952ca385f7c6b8e68720`)
       .then((response) => {
-        if(response.cod === 200){
-          if(window.confirm(`Did you mean ${input_city.current.value}`)){
+        console.log(response)
+        if( response.status === 200){
+          if(window.confirm(`Did you mean ${input_city.current.value}`)){ //TODO: Visa förslag på städer under search bar
             console.log('Success')
             input_city.current.value = ""
-            props.addCity(response) //TODO: ändra till det riktiga API response
+            props.addCity(response.data) 
           }else{
             console.log('Try again')
-            input_city.current.value = ""
           }
         }
-      })
+      }).catch((err) => console.log(err))
 
     }
   }
