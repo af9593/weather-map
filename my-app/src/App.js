@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import CitySearch from './CitySearch'
 import Cities from './Cities'
-
+import CityForecast from './CityForecast'
 function App() {
   const [cities, setCities] = useState([{id:0, name:"Malmö"}, {id:1, name:"London"}])
 
@@ -21,6 +21,7 @@ function App() {
       <h1> Weather map</h1>
       <CitySearch addCity = {addCity}/>
       <Cities cities = {cities} deleteCity={deleteCity}/>
+      <CityForecast/>
     </div>
   );
 }
