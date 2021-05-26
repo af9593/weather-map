@@ -1,6 +1,5 @@
 
-//fetch the stored cities from local storage     ** överföra denna metod till branchen för 0.6 kraven  
-function loadCities(){
+export function loadCitiesFromLocalStorage(){
     let JSONCities = localStorage.getItem("cities");
 
     if(JSONCities == null){
@@ -18,58 +17,31 @@ function printCities(cities){
         let city = cities[i];
         console.log(city.cityname);
 
-
         /* < här kan staden visas  > */
 
-
     }
-
-    
 }
 
 
-function removeCity(){
-
-
-
-    var cities = loadCities();
+function removeCity(id){
+    var cities = loadCitiesFromLocalStorage();
     var cities = cities.filter(function(city){
-        //return city.cityname != 
+        return city.id !== id;
     })
+    localStorage.setItem("cities", JSON.stringify(cities));
 
 }
 
-
-function addCities(){
-    //let cityInput = "Lund";
-    let cityInput = $("#cityname").val();
-    
-    if(cityInput.length != 0){
-        var cities = loadCities();
+export function addCityToLocalStorage(cityInput){
         
-        cities.push({
-            cityname: cityInput
-        })
+    var cities = loadCitiesFromLocalStorage();
+        
+    cities.push(cityInput)
 
-        localStorage.setItem("cities", JSON.stringify(cities));
+    localStorage.setItem("cities", JSON.stringify(cities));
 
-        printCities(cities);
-
-    }else if(cityInput.length == 0){
-        alert("Please eneter a city!");
-    }
+    printCities(cities);
 }
 
 
-$("#save-movie").on("click", function(e) {
-    e.preventDefault();
 
-    addCities();
-
-});
-
-$(document).ready(function (){
-    let allCities  = loadCities();
-    printCities(allCities);
-});
-export default {addCities, removeCity, loadCities}
