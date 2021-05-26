@@ -3,11 +3,18 @@ import CitySearch from './CitySearch'
 import Cities from './Cities'
 import CityForecast from './CityForecast'
 function App() {
-  const [cities, setCities] = useState([{id:0, name:"Malmö"}, {id:1, name:"London"}])
+  const [cities, setCities] = useState([])
 
   function addCity(city){
     const newId = cities.length > 0 ? cities[cities.length - 1].id + 1 : 1;
-    setCities([...cities, {id: newId, name: city['name']}])
+    const newCity = {
+      id:newId, 
+      name: city.name,
+      coord: city.coord,
+      weather: city.weather,
+      temp : city.main.temp
+    }
+    setCities([...cities, newCity])
     console.log(cities)
   }
   function deleteCity(id){

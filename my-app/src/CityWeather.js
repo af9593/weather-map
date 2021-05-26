@@ -23,32 +23,44 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CityTemp(props) {
+export default function CityWeather(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
-  let src = `http://openweathermap.org/img/wn/${props.response.weather[0].icon}.png`
-  function addCity(){
-    props.addCity(props.response)
+  let src = `http://openweathermap.org/img/wn/${props.city.weather[0].icon}.png`
+  function showForecast(){
+      console.log('Forecast')
   }
   return (
     <Card>
       <CardContent>
         <Typography variant="h4" component="h2">
-          {props.response.name} {bull}
+          {props.city.name} {bull}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-            {props.response.main.temp} °C
+            {props.city.temp} °C
             <img src={src} alt = "..."></img>
         </Typography>
         <Typography component="p">
-          {props.response.weather[0].main} 
+          {props.city.weather[0].main} 
           <br />
-          {props.response.weather[0].description}
+          {props.city.weather[0].description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button onClick={addCity} size="Large">Add to Favorites</Button>
+        <Button onClick={showForecast} size="Large">More details ...</Button> 
       </CardActions>
     </Card>
   );
 }
+/**
+ * coord: {lon: 89.6022, lat: 24.2034}
+id: 1
+name: "Narnia"
+temp: 28.91
+weather: Array(1)
+0:
+description: "overcast clouds"
+icon: "04d"
+id: 804
+main: "Clouds"
+ */

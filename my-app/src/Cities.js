@@ -1,12 +1,12 @@
 
-import CityTemp from './CityTemp'
+import CityWeather from './CityWeather'
 export default function Cities(props) {
     return (
         <div>
             <ul>
                 {
                     props.cities.map(city => 
-                    <CityTemp  key = {city.id} movie = {city} deleteMovie ={props.deleteMovie}
+                    <CityWeather key = {city.id} city = {city} deleteMovie ={props.deleteMovie}
                     />)
                 }    
             </ul>
