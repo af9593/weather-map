@@ -8,9 +8,16 @@ function App() {
 
 
   const [cities, setCities] = useState([])
-  var cc = loadCitiesFromLocalStorage();
-  function addCity(city){
+  console.log(cities)
+  
 
+   useEffect(() => {
+    var cc = loadCitiesFromLocalStorage();
+    console.log(cc)
+    setCities(cc)
+   },[])
+
+  function addCity(city){
     const newId = cities.length > 0 ? cities[cities.length - 1].id + 1 : 1;
     const newCity = {
       id:newId, 
