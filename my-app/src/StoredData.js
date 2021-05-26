@@ -54,7 +54,6 @@ function addCities(){
         localStorage.setItem("cities", JSON.stringify(cities));
 
         printCities(cities);
-        
 
     }else if(cityInput.length == 0){
         alert("Please eneter a city!");
@@ -73,3 +72,4 @@ $(document).ready(function (){
     let allCities  = loadCities();
     printCities(allCities);
 });
+export default {addCities, removeCity, loadCities}
