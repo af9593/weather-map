@@ -8,10 +8,13 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 import Slide from '@material-ui/core/Slide';
 
 
 import List from '@material-ui/core/List';
+import Delete from '@material-ui/icons/Delete';
 
 const useStylesDialog = makeStyles((theme) => ({
     appBar: {
@@ -57,13 +60,12 @@ export default function CityForecast(props) {
     const handleClose = () => {
         setOpen(false);
     };
-
-
     return (
     <div>
       <Button className={classes.button} onClick={handleClickOpen}>
         Show Forecast For the next 8 days
       </Button>
+      <DeleteIcon onClick={props.deleteCity}/>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
           <Toolbar>

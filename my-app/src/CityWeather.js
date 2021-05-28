@@ -35,6 +35,9 @@ const useStyles = makeStyles({
 export default function CityWeather(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
+  function deleteCity(){
+    props.deleteCity(props.city.id)
+  }
   return (
     <div>
       <Card className={classes.root}> 
@@ -53,7 +56,7 @@ export default function CityWeather(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <CityForecast city = {props.city} /> 
+          <CityForecast deleteCity = {deleteCity} city = {props.city} /> 
         </CardActions>
       </Card>
       
