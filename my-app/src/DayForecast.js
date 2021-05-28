@@ -23,12 +23,12 @@ export default function DayForecast(props) {
                 </Typography>
 
                 <Typography className={classes.content} variant="subtitle1" component="p">
-                 Day {props.day.temp.day} °C <br/>
+                 Day <br/> {props.day.temp.day} °C <br/>
                  ≈ {props.day.feels_like.day} °C 
                  </Typography>
 
                  <Typography className={classes.content} variant="subtitle1" component="p">
-                 Night {props.day.temp.night} °C <br/>
+                 Night <br/> {props.day.temp.night} °C <br/>
                  ≈ {props.day.feels_like.night} °C
                 </Typography>
                 <Typography className={classes.content} variant="subtitle1" component="p">
