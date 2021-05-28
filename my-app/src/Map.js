@@ -16,7 +16,12 @@ export default function Map(props){
                         position={{
                             lat:city.coord.lat,
                             lng:city.coord.lon
-                            }} 
+                            }}
+                        
+                        
+                        //city.temp visa väder 
+                           
+
                     />
                 ))
                 }
@@ -28,13 +33,16 @@ export default function Map(props){
     const WrappedMap =  withScriptjs(withGoogleMap(getMap));
 
     return (
+
         <div style={{width: "75vw", height:"75vh", margin: "0 auto"}}>
+              <h3>View you favotite cities with Google maps</h3>
             <WrappedMap 
             googleMapURL={'https://maps.googleapis.com/maps/api/js?key=AIzaSyC0az1RERDN03J42otSaB9J0JrEcdfU5Ps&callback=initMap&libraries=&v=weekly'}
             loadingElement={<div style={{height: "100%"}} />}
             containerElement={<div style={{height: "100%"}}/>}
             mapElement={<div style={{height: "100%"}}/>}
             />
+          
         </div>
     );
 }
