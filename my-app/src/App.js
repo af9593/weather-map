@@ -3,6 +3,7 @@ import React, {useState,useEffect} from 'react'
 import CitySearch from './CitySearch'
 import Cities from './Cities'
 import CityForecast from './CityForecast'
+import Map from './Map'
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
       <CitySearch addCity = {addCity}/>
       <Cities cities = {cities} deleteCity={deleteCity}/>
       <CityForecast/>
+      <Map cities = {cities}/>
     </div>
   );
 }
