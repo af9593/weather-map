@@ -2,11 +2,11 @@
 import CityWeather from './CityWeather'
 export default function Cities(props) {
     return (
-        <div>
+        <div className="Favorites">
             <ul>
                 {
                     props.cities.map(city => 
-                    <CityWeather key = {city.id} city = {city} deleteMovie ={props.deleteMovie}
+                    <CityWeather key = {city.id} city = {city} deleteCity ={props.deleteCity}
                     />)
                 }    
             </ul>

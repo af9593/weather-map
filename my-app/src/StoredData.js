@@ -23,7 +23,7 @@ function printCities(cities){
 }
 
 
-function removeCity(id){
+export function removeCityFromLocalStorage(id){
     var cities = loadCitiesFromLocalStorage();
     var cities = cities.filter(function(city){
         return city.id !== id;

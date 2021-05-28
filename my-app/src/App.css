@@ -1,0 +1,27 @@
+svg{
+    background-color: #28427B;
+}
+body{
+    background-color: #E5E5E5;
+}
+
+.App{
+    display: grid;
+    grid-template-areas: 
+    "Search"
+    "Favorites"
+    "Map";        
+}
+
+.Search{
+    grid-area: Search;
+}
+
+.Favorites{
+    grid-area: Favorites;
+    margin-top: 10px;
+}
+
+.Map{
+    grid-area: Map;
+}
