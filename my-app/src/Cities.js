@@ -6,7 +6,7 @@ export default function Cities(props) {
             <ul>
                 {
                     props.cities.map(city => 
-                    <CityWeather key = {city.id} city = {city} deleteMovie ={props.deleteMovie}
+                    <CityWeather key = {city.id} city = {city} deleteCity ={props.deleteCity}
                     />)
                 }    
             </ul>

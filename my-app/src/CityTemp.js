@@ -9,6 +9,8 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    minHeight: 150,
+    background: 'linear-gradient(45deg,#E5E5E5 30%, #FFFFFF  50%)',
   },
   bullet: {
     display: 'inline-block',
@@ -21,6 +23,15 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
+  button: {
+    background: 'linear-gradient(45deg, #FCA311 30%, #DE8A02 90%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+  }
 });
 
 export default function CityTemp(props) {
@@ -31,7 +42,7 @@ export default function CityTemp(props) {
     props.addCity(props.response)
   }
   return (
-    <Card>
+    <Card className={classes.root}>
       <CardContent>
         <Typography variant="h4" component="h2">
           {props.response.name} {bull}
@@ -47,7 +58,7 @@ export default function CityTemp(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button onClick={addCity} size="Large">Add to Favorites</Button>
+        <Button className={classes.button} onClick={addCity} size="large">Add to Favorites</Button>
       </CardActions>
     </Card>
   );
