@@ -48,7 +48,11 @@ function App() {
       <CitySearch addCity = {addCity} />
       <Cities cities = {cities} deleteCity={deleteCity}/>
       <Map cities = {cities}/>
-
+      <div class="Footer bg-light py-4">
+        <div class="container text-center">
+          <p class="text-muted mb-0 py-2"> WeatherMap designed by <a href="https://github.com/af9593" target="_blank" > Moustafa</a> , <a href="https://github.com/Basir98" target="_blank"> Basir</a> and <a href="https://github.com/chungpaella" target="_blank">chungpaella</a>  - 2021</p>
+        </div>
+      </div>
     </div>
   );
 }
