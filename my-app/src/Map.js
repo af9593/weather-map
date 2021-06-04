@@ -37,7 +37,7 @@ export default function Map(props){
         <div className="Map" style={{width: "75vw", height:"75vh", margin: "0 auto"}}>
             <h3 style={{textAlign:"center"}}>View you favorite cities with Google maps</h3>
             <WrappedMap 
-            googleMapURL={'https://maps.googleapis.com/maps/api/js?key=AIzaSyC0az1RERDN03J42otSaB9J0JrEcdfU5Ps&callback=initMap&libraries=&v=weekly'}
+            googleMapURL={'https://maps.googleapis.com/maps/api/js?key=AIzaSyC0az1RERDN03J42otSaB9J0JrEcdfU5Ps&libraries=&v=weekly'}
             loadingElement={<div style={{height: "100%"}} />}
             containerElement={<div style={{height: "100%"}}/>}
             mapElement={<div style={{height: "100%"}}/>}

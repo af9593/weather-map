@@ -9,12 +9,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import DeleteIcon from '@material-ui/icons/Delete';
-
 import Slide from '@material-ui/core/Slide';
-
-
 import List from '@material-ui/core/List';
-import Delete from '@material-ui/icons/Delete';
 
 const useStylesDialog = makeStyles((theme) => ({
     appBar: {
