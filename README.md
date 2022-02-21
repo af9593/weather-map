@@ -1,7 +1,11 @@
 
 # WeatherMap
 
-En responsiv webbapplikation som visar nuvarande vädret och även väderprognos på den stad användaren sökt efter. Användaren har möjlighet att lägg till stad eller flera städer som favorit. Dessa valda favoritstäder visualiseras på en karta med en marker. 
+Eng: A responsive web application that shows the current weather and also the weather forecast of the city the user searched for. The user has the option to add city or multiple cities as a favorite. These selected favorite cities are visualized on a map with a marker. The weather info is fetched using openweathermap api. 
+
+Sve: En responsiv webbapplikation som visar nuvarande vädret och även väderprognos på den stad användaren sökt efter. Användaren har möjlighet att lägg till stad eller flera städer som favorit. Dessa valda favoritstäder visualiseras på en karta med en marker. Väder info hämtas genom att använda openweathermap api.
+
+
 
 # Varför React?
 React är ett effektivt och flexibelt JavaScript ramverk som har använts för vårt projekt. Den främsta anledningen till varför vi valde React som vårt ramverk är på grund av ramverket är den mest använda ramverket jämfört med AngularJs och Vue.js. Ramverket är lätt att lära sig, tack vare sin enkla design och dess väl detaljerade dokumentation. Inte nog med det, så är React väldigt attraktivt att på arbetsmarknaden inom utveckling. 
