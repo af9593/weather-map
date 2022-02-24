@@ -1,4 +1,4 @@
-import {addCityToLocalStorage, loadCitiesFromLocalStorage, removeCityFromLocalStorage} from './StoredData'
+import {checkLocalStorage, loadCitiesFromLocalStorage, removeCityFromLocalStorage} from './StoredData'
 import React, {useState,useEffect} from 'react'
 import CitySearch from './CitySearch'
 import Cities from './Cities'
@@ -7,34 +7,35 @@ import './App.css'
 
 function App() {
 
-
   const [cities, setCities] = useState([])
   console.log(cities)
   
 
    useEffect(() => {
+     document.title = "Weather map";
     var cc = loadCitiesFromLocalStorage();
     console.log(cc)
     setCities(cc)
    },[])
 
   function addCity(city){
-    const newId = cities.length > 0 ? cities[cities.length - 1].id + 1 : 1;
-    const newCity = {
-      id:newId, 
+    //const newId = cities.length > 0 ? cities[cities.length - 1].id + 1 : 1;
+    const newCity = { 
+      id: city.id,
+      //id:newId,
       name: city.name,
       coord: city.coord,
       weather: city.weather,
       temp : city.main.temp
     }
 
-    setCities([...cities, newCity])
-    addCityToLocalStorage(newCity);
-    
-
+    checkLocalStorage(newCity);
+    var cc = loadCitiesFromLocalStorage();
+    setCities(cc)
 
     console.log(cities)
   }
+
   function deleteCity(id){
     setCities(cities.filter((city) => city.id !== id)) //Filtera bort alla cities som ej har samma id.
     removeCityFromLocalStorage(id);
